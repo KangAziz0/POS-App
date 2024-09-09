@@ -1,0 +1,104 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "name": "Makanan"
+        },
+        {
+            "id": 2,
+            "name": "Minuman"
+        },
+        {
+            "id": 3,
+            "name": "Lain-lain"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "code": "P0001",
+            "name": "Nasi Goreng",
+            "price": 15000,
+            "is_ready": true,
+            "image": "https://th.bing.com/th/id/OIP.eD7MpRmuCp5oKFlcdoKmuwHaE8?w=265&h=180&c=7&r=0&o=5&pid=1.7",
+            "category_id": 1
+        },
+        {
+            "id": 2,
+            "code": "P0002",
+            "name": "Ayam Goreng",
+            "price": 20000,
+            "is_ready": true,
+            "image": "https://th.bing.com/th/id/OIP.jJI3bTJ-diLfKDHb9-vwmwHaE8?w=265&h=180&c=7&r=0&o=5&pid=1.7",
+            "category_id": 1
+        },
+        {
+            "id": 3,
+            "code": "P0003",
+            "name": "Es Jeruk",
+            "price": 10000,
+            "is_ready": true,
+            "image": "https://th.bing.com/th/id/OIP.jJI3bTJ-diLfKDHb9-vwmwHaE8?w=265&h=180&c=7&r=0&o=5&pid=1.7",
+            "category_id": 2
+        },
+        {
+            "id": 4,
+            "code": "P0004",
+            "name": "Es Campur",
+            "price": 15000,
+            "is_ready": true,
+            "image": "https://th.bing.com/th/id/OIP.jJI3bTJ-diLfKDHb9-vwmwHaE8?w=265&h=180&c=7&r=0&o=5&pid=1.7",
+            "category_id": 2
+        },
+        {
+            "id": 5,
+            "code": "P0005",
+            "name": "Ayam Bakar",
+            "price": 20000,
+            "is_ready": true,
+            "image": "https://th.bing.com/th/id/OIP.jJI3bTJ-diLfKDHb9-vwmwHaE8?w=265&h=180&c=7&r=0&o=5&pid=1.7",
+            "category_id": 1
+        },
+        {
+            "id": 6,
+            "code": "P0006",
+            "name": "Sate Ayam",
+            "price": 25000,
+            "is_ready": true,
+            "image": "https://th.bing.com/th/id/OIP.jJI3bTJ-diLfKDHb9-vwmwHaE8?w=265&h=180&c=7&r=0&o=5&pid=1.7",
+            "category_id": 1
+        },
+        {
+            "id": 7,
+            "code": "P0007",
+            "name": "Kentang goreng",
+            "price": 10000,
+            "is_ready": true,
+            "image": "https://th.bing.com/th/id/OIP.jJI3bTJ-diLfKDHb9-vwmwHaE8?w=265&h=180&c=7&r=0&o=5&pid=1.7",
+            "category_id": 3
+        }
+    ],
+    "carts": [
+        {
+            "qty": 2,
+            "price": "15000",
+            "name": "Nasi Goreng",
+            "totalPrice": 30000,
+            "note": "",
+            "productId": "1",
+            "id": 1
+        },
+        {
+            "qty": "1",
+            "price": "20000",
+            "name": "Ayam Goreng",
+            "totalPrice": "20000",
+            "note": "",
+            "productId": "2",
+            "id": 2
+        }
+    ],
+    "orders": [
+      
+    ]
+}
