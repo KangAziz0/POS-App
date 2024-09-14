@@ -66,12 +66,12 @@ function Order() {
                   </div>
                   <div className="d-flex gap-5">
                     <small style={{ color: "red" }} className="fw-bold">
-                      x {item.qty}
+                      x {item.quantity}
                     </small>
                     <strong>
                       <small>
                         Rp{" "}
-                        {parseInt(item.price * item.qty).toLocaleString(
+                        {parseInt(item.price * item.quantity).toLocaleString(
                           "id-ID"
                         )}
                       </small>
