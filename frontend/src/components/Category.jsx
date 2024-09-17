@@ -13,14 +13,12 @@ function Category() {
 
     useEffect(() => {
         dispatch(getAllCategory())
-        
     }, [dispatch])
     
     useEffect(() => {
         dispatch(getAllCategory()).finally(() => setLoading(false))
     }, [dispatch])
     
-    console.log(category);
     function setActive(elem) {
         var a = document.getElementsByClassName('active')
         for (let index = 0; index < a.length; index++) {

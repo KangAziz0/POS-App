@@ -9,8 +9,7 @@ class CartRepository implements ICartRepository
 {
   public function AddToCart(array $data)
   {
-    Cart::create([
-      'id' => $data['id'],
+    Cart::insert([
       'name' => $data['name'],
       'price' => $data['price'],
       'quantity' => $data['quantity'],

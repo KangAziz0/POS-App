@@ -3,7 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getProduct } from "../features/ProductSlice";
 import CardComponent from "./CardComponent";
-import { addCart, updateCart } from "../features/CartSlice";
+import { addCart, updateCart} from "../features/CartSlice";
 import axios from "axios";
 
 function ProductDetail() {
@@ -17,26 +17,28 @@ function ProductDetail() {
   }, [dispatch]);
 
   const setCart = async (product) => {
-    const response = await axios.get(`/carts?productId=${product.id}`);
+    const response = await axios.get(`/api/carts/product/${product.id}`);
     if (response.data && response.data.length > 0) {
       // UPDATE CART
       const orderItem = response.data[0];
-      console.log('update');
+      orderItem.quantity = parseInt(orderItem.quantity) + 1;
+      orderItem.totalPrice = parseInt(orderItem.price) * parseInt(orderItem.quantity);
+  
+      console.log(orderItem);
       
-      orderItem.qty = parseInt(orderItem.qty) + 1;
-      orderItem.totalPrice = parseInt(orderItem.price) * parseInt(orderItem.qty);
       dispatch(updateCart(orderItem));
     } else {
-      console.log('insert');
+   
       // INSERT CART
       const orderItem = {
-        qty: 1,
+        quantity: 1,
         price: product.price,
         name: product.name,
         totalPrice: product.price,
-        note: "",
-        productId: product.id,
+        product_id: product.id,
       };
+      // console.log(orderItem);
+      
       dispatch(addCart(orderItem));
     }
   };

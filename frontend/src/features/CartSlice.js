@@ -7,25 +7,26 @@ export const getCart = createAsyncThunk("cart/getCart", async () => {
 });
 
 export const addCart = createAsyncThunk("cart/addCart", async (data) => {
-  await axios.post("/carts", data);
+  await axios.post("/api/carts", data);
+
   const response = await axios.get("/api/carts");
   return response.data;
 });
 
 export const updateCart = createAsyncThunk("cart/updateCart", async (data) => {
-  await axios.put(`/carts/${data.id}`, data);
+  await axios.put(`/api/carts/${data.product_id}`, data);
   const response = await axios.get("/api/carts");
   return response.data;
 });
 
 export const delCart = createAsyncThunk("cart/deleteCart",async (data) => {
-  await axios.delete(`/carts/${data}`)
+  await axios.delete(`/api/carts/${data}`)
   const response = await axios.get("/api/carts");
   return response.data;
 })
 
 export const saveCart = createAsyncThunk("cart/saveCart", async (data) => {
-  await axios.post("/orders", data);
+  await axios.post("/api/orders", data);
   axios.get("/api/carts").then((cart)=>{
     const data = cart.data
     data.map(async (item) =>{

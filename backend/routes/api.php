@@ -25,9 +25,13 @@ Route::apiResource('/categories',CategoryController::class);
 
 Route::get('/products',[ProductController::class,'index']);
 Route::post('/products',[ProductController::class,'store']);
+Route::get('/products/category/{id}',[ProductController::class,'productByCategory']);
 
 Route::get('/carts',[ProductController::class,'carts']);
 Route::post('/carts',[ProductController::class,'cartStore']);
+Route::put('/carts/{id}',[ProductController::class,'cartUpdate']);
+Route::delete('/carts/{id}',[ProductController::class,'cartDelete']);
+Route::get('/carts/product/{id}',[ProductController::class,'cartProduct']);
 
 Route::get('/orders/{id}',[OrderController::class,'show']);
 Route::post('/orders',[OrderController::class,'store']);

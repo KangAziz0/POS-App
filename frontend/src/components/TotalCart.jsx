@@ -15,7 +15,6 @@ function TotalCart({ carts }) {
 
   const saveCartData = (data) => {
     const orderData = {
-      date: new Date(),
       total: sum,
       detail: data,
     };

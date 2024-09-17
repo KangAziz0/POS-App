@@ -65,7 +65,6 @@ class OrderController extends Controller
         try {
             // Simpan data ke tabel orders
             $order = Order::create([
-                'id' => $request->id,
                 'date' => date(now()),
                 'total' => $request->total,
             ]);
@@ -73,9 +72,9 @@ class OrderController extends Controller
             // Simpan data ke tabel order_details
             foreach ($request->detail as $detail) {
                 OrderDetail::create([
-                    'order_id' => $request->id, // Foreign key
+                    'order_id' => $order->id, // Foreign key
                     'id' => $detail['id'],
-                    'qty' => $detail['qty'],
+                    'qty' => $detail['quantity'],
                     'price' => $detail['price'],
                     'totalPrice' => $detail['totalPrice'],
                     'name' => $detail['name'],

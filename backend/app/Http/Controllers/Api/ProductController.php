@@ -8,6 +8,7 @@ use App\Http\Requests\ProductRequest;
 use App\Models\Cart;
 use App\Models\Product;
 use App\Repositories\Cart\ICartRepository;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -44,5 +45,31 @@ class ProductController extends Controller
     {
         $this->cart->AddToCart($request->all());
         return response()->json(['message' => 'Add To Cart Success']);
+    }
+
+    public function productByCategory($id)
+    {
+        return response()->json(Product::where('category_id', $id)->get());
+    }
+
+    public function cartProduct($id)
+    {
+        $product = Cart::where('product_id', $id)->get();
+        return response()->json($product);
+    }
+
+    public function cartUpdate(Request $request, $id)
+    {
+        Cart::where('product_id', $id)->update([
+            'quantity' => $request->quantity,
+            'totalPrice' => $request->totalPrice
+        ]);
+        return response()->json(['message' => 'update Success']);
+        // dd($request->quantity);
+    }
+
+    public function cartDelete($id){
+        Cart::where('id',$id)->delete();
+        return response()->json(['message' => 'Cart Deleted Success']);
     }
 }
